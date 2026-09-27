@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f1f2e9" />
+    <meta name="description" content="在线免费玩贪吃蛇小游戏，支持电脑键盘和手机触屏，包含多种难度、皮肤和地图主题。" />
+    <meta name="keywords" content="贪吃蛇,在线游戏,网页版游戏,手机游戏,snake game" />
+    <meta name="author" content="SSS327-AI" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="贪吃蛇 · 在线网页版小游戏" />
+    <meta property="og:description" content="打开浏览器即可游玩的贪吃蛇小游戏，支持键盘和触屏操作。" />
+    <meta property="og:url" content="https://sss327-ai.github.io/snake/" />
+    <link rel="canonical" href="https://sss327-ai.github.io/snake/" />
+    <title>在线贪吃蛇小游戏 · 方向感</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="game-header">
+        <div class="brand-mark" aria-hidden="true">S</div>
+        <div>
+          <p class="eyebrow">ARCADE · 01</p>
+          <h1>贪吃蛇</h1>
+        </div>
+        <p class="header-note">吃下果实，别撞到自己。</p>
+      </header>
+
+      <div class="hud">
+        <div class="stat-box">
+          <span class="label">分数</span>
+          <strong id="score">0</strong>
+        </div>
+        <div class="stat-box">
+          <span class="label">关卡</span>
+          <strong id="level">1</strong>
+        </div>
+        <div class="stat-box">
+          <span class="label">最高</span>
+          <strong id="best-score">0</strong>
+        </div>
+        <div class="stat-box">
+          <span class="label">速度</span>
+          <strong id="speed-level">1x</strong>
+        </div>
+        <div class="stat-box">
+          <span class="label">状态</span>
+          <strong id="status" aria-live="polite">准备中</strong>
+        </div>
+      </div>
+
+      <div class="settings-bar">
+        <label>
+          难度
+          <select id="difficulty">
+            <option value="easy">简单</option>
+            <option value="normal" selected>普通</option>
+            <option value="hard">困难</option>
+            <option value="expert">专家</option>
+          </select>
+        </label>
+
+        <label>
+          样式
+          <select id="skin">
+            <option value="emerald" selected>翡翠</option>
+            <option value="neon">霓虹</option>
+            <option value="sunset">日落</option>
+            <option value="arctic">北极</option>
+            <option value="fluo">荧光</option>
+            <option value="royal">皇家</option>
+          </select>
+        </label>
+
+        <label>
+          地图
+          <select id="map-theme">
+            <option value="classic" selected>经典</option>
+            <option value="ocean">海洋</option>
+            <option value="night">夜空</option>
+            <option value="sunset">日落</option>
+            <option value="meadow">草原</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="board-wrap">
+        <canvas id="game" width="560" height="560" aria-label="Snake Game"></canvas>
+        <div id="overlay" class="overlay visible">
+          <h1 id="overlay-title">Snake</h1>
+          <p id="overlay-text">按方向键或 W/A/S/D 开始游戏</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="start-btn" type="button">开始游戏</button>
+        <button id="pause-btn" type="button" class="secondary">暂停</button>
+        <button id="restart-btn" type="button" class="danger">重新开始</button>
+      </div>
+
+      <nav class="touch-controls" aria-label="触屏方向控制">
+        <button type="button" data-direction="up" aria-label="向上">↑</button>
+        <button type="button" data-direction="left" aria-label="向左">←</button>
+        <button type="button" data-direction="down" aria-label="向下">↓</button>
+        <button type="button" data-direction="right" aria-label="向右">→</button>
+      </nav>
+      <p class="key-hint">方向键 / WASD 移动 <span>·</span> 空格暂停</p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
